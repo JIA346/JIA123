@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="zh - CN">
+
+<head>
+    <meta charset="UTF - 8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>简单对话程序</title>
+    <style>
+        #display {
+            margin-top: 10px;
+        }
+    </style>
+</head>
+
+<body>
+    <input type="text" id="inputText" placeholder="请输入您的话">
+    <button onclick="reply()">发送</button>
+    <div id="display"></div>
+
+    <script>
+        function reply() {
+            let userInput = document.getElementById('inputText').value;
+            let displayDiv = document.getElementById('display');
+            // 定义回复数组
+            let responses = [
+                "白瑞轩，我爱你",
+                "白瑞轩，以后都不会让你一个人了",
+                "白瑞轩，你想我了吗 " ,
+                "白瑞轩，我说幸福就是有你在身边 " ,
+                "白瑞轩，太阳升起的时候，你要更幸福" 
+            ];
+            // 随机选择一个回复
+            let randomIndex = Math.floor(Math.random() * responses.length);
+            let response = responses[randomIndex];
+
+            let p = document.createElement('p');
+            p.textContent = response;
+            displayDiv.appendChild(p);
+            document.getElementById('inputText').value = '';
+        }
+    </script>
+
+</body>
+
+</html>
